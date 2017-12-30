@@ -25,6 +25,7 @@ func main() {
 	}
 }
 
+// handle function will loop infinitely, connection will not be closed
 func handle(conn net.Conn) {
 		scanner := bufio.NewScanner(conn)
 		for scanner.Scan() {
