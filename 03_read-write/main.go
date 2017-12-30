@@ -26,8 +26,8 @@ func main() {
 	}
 }
 
-// handle func will now timeout and close out of loop
 func handle(conn net.Conn) {
+	// set deadline for connection, close after 10 seconds
 	err := conn.SetDeadline(time.Now().Add(10 * time.Second))
 	if err != nil {
 		log.Println("Connection Timeout")
